@@ -1,5 +1,11 @@
 ﻿import React from 'react';
-import { FlatList, GestureResponderEvent, StyleSheet, Text, TouchableHighlight } from 'react-native';
+import {
+  FlatList,
+  GestureResponderEvent,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+} from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 
 interface FlatListDataItem {
@@ -32,22 +38,25 @@ function FlatListItem({ title, onPress }: FlatListItemProps) {
       style={styles.flatListItem}
       activeOpacity={0.6}
       underlayColor="#ddd"
-      onPress={onPress}>
+      onPress={onPress}
+    >
       <Text>{title}</Text>
     </TouchableHighlight>
   );
 }
 
-export default function HomeScreen({ navigation }: StackScreenProps<RootStackParamList, 'Home'>) {
+export default function HomeScreen({
+  navigation,
+}: StackScreenProps<RootStackParamList, 'Home'>) {
   return (
     <FlatList
       data={FlatListDataItems}
-      renderItem={({ item }) =>
+      renderItem={({ item }) => (
         <FlatListItem
           title={item.title}
           onPress={() => navigation.navigate(item.screenName)}
         />
-      }
+      )}
       keyExtractor={item => item.id}
     />
   );

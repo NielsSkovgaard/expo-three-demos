@@ -1,4 +1,4 @@
-﻿﻿﻿import React from 'react';
+﻿import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ReactThreeFiberCanvas from '../components/ReactThreeFiberCanvas';
 
@@ -11,7 +11,9 @@ export default function ReactThreeFiberScreen() {
       <ReactThreeFiberCanvas />
       <View style={styles.cardContainer}>
         <View style={styles.card}>
-          <Text>Show information about the active element in the 3D scene here.</Text>
+          <Text>
+            Show information about the active element in the 3D scene here.
+          </Text>
         </View>
       </View>
     </>

@@ -6,9 +6,17 @@ class Logger {
   static logUpdateEvent: boolean = false;
 
   // https://github.com/react-spring/react-three-fiber#events
-  static logPointerEvent = (e: PointerEvent, eventName: string, addTrailingLineBreak: boolean): void => {
+  static logPointerEvent = (
+    e: PointerEvent,
+    eventName: string,
+    addTrailingLineBreak: boolean
+  ): void => {
     if (Logger.logPointerEvents) {
-      console.log(`${eventName}: (${e.clientX.toFixed(2)}, ${e.clientY.toFixed(2)})${addTrailingLineBreak ? '\r\n' : ''}`);
+      console.log(
+        `${eventName}: (${e.clientX.toFixed(2)}, ${e.clientY.toFixed(2)})${
+          addTrailingLineBreak ? '\r\n' : ''
+        }`
+      );
     }
   };
 
