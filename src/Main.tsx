@@ -7,7 +7,7 @@ import ThreeScreen from './screens/ThreeScreen';
 
 const Stack = createStackNavigator();
 
-export default function App() {
+export default function Main() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
