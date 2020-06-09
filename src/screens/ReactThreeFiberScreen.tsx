@@ -4,10 +4,9 @@ import ReactThreeFiberCanvas from '../components/ReactThreeFiberCanvas';
 
 import '../utils/System';
 
-// TODO: It appears that when a <Canvas> is wrapped in a <View>, then the <Canvas> becomes hidden. How to fix this?
 export default function ReactThreeFiberScreen() {
   return (
-    <>
+    <View style={styles.container}>
       <ReactThreeFiberCanvas />
       <View style={styles.cardContainer}>
         <View style={styles.card}>
@@ -16,11 +15,14 @@ export default function ReactThreeFiberScreen() {
           </Text>
         </View>
       </View>
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   cardContainer: {
     height: '25%',
     padding: 8,
