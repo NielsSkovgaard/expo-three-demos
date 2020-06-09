@@ -36,8 +36,10 @@ const Box = () => {
   };
 
   useFrame(() => {
-    ref.current &&
-      void ((ref.current.rotation.x += 0.01), (ref.current.rotation.y += 0.01));
+    if (ref.current) {
+      ref.current.rotation.x += 0.01;
+      ref.current.rotation.y += 0.01;
+    }
   });
 
   return (
