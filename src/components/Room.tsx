@@ -1,18 +1,25 @@
 ﻿import React, { useCallback, useState } from 'react';
 import { ReactThreeFiber } from 'react-three-fiber';
-import Logger from '../utils/Logger';
 
 export interface RoomProps {
   dimensions?: any;
   position?: ReactThreeFiber.Vector3;
   color?: ReactThreeFiber.Color;
+  setCardText?: (text: string, color?: string) => void;
+  cardTextColor?: string;
 }
 
 interface RoomState {
   color?: ReactThreeFiber.Color;
 }
 
-const Room = ({ dimensions, position, color }: RoomProps) => {
+const Room = ({
+  dimensions,
+  position,
+  color,
+  setCardText,
+  cardTextColor,
+}: RoomProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const onActivation = useCallback(
@@ -24,7 +31,7 @@ const Room = ({ dimensions, position, color }: RoomProps) => {
   );
 
   const state: RoomState = {
-    color: isActive ? 'hotpink' : color,
+    color: isActive ? '#000' : color,
   };
 
   return (
@@ -32,35 +39,27 @@ const Room = ({ dimensions, position, color }: RoomProps) => {
       position={position}
       castShadow
       receiveShadow
-      onClick={e => {
-        Logger.logPointerEvent(e, 'click', true);
-      }}
+      onClick={e => setCardText?.('click', cardTextColor)}
       onPointerUp={e => {
-        Logger.logPointerEvent(e, 'up   ', false);
+        setCardText?.('up', cardTextColor);
         onActivation(e, false);
       }}
       onPointerDown={e => {
-        Logger.logPointerEvent(e, 'down ', false);
+        setCardText?.('down', cardTextColor);
         onActivation(e, true);
       }}
       onPointerOver={e => {
-        Logger.logPointerEvent(e, 'over ', false);
+        setCardText?.('over', cardTextColor);
       }}
       onPointerOut={e => {
-        Logger.logPointerEvent(e, 'out  ', false);
+        setCardText?.('out', cardTextColor);
         onActivation(e, false);
       }}
-      onPointerMove={e => {
-        Logger.logPointerEvent(e, 'move ', false);
-      }}
-      onWheel={e => {
-        Logger.logPointerEvent(e, 'wheel', false);
-      }}
-      // onPointerEnter={e => { Logger.logPointerEvent(e, 'enter', false); }}
-      // onPointerLeave={e => { Logger.logPointerEvent(e, 'leave', true); }}
-      onUpdate={self => {
-        Logger.logUpdate(self);
-      }}
+      onPointerMove={e => setCardText?.('move', cardTextColor)}
+      onWheel={e => setCardText?.('wheel', cardTextColor)}
+      // onPointerEnter={e => setCardText?.('enter', elementName)}
+      // onPointerLeave={e => setCardText?.('leave', elementName)}
+      // onUpdate={self => setCardText?.('props have been updated')}
     >
       <boxGeometry attach="geometry" args={dimensions} />
       <meshStandardMaterial

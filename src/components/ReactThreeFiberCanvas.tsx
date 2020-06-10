@@ -6,7 +6,13 @@ import Controls from './Controls';
 import Floor from './Floor';
 import Room from './Room';
 
-export default function ReactThreeFiberCanvas() {
+interface ReactThreeFiberCanvasProps {
+  setCardText?: (text: string, color?: string) => void;
+}
+
+export default function ReactThreeFiberCanvas({
+  setCardText,
+}: ReactThreeFiberCanvasProps) {
   return (
     <Canvas style={styles.canvas} camera={{ position: [0, 5, 10] }} shadowMap>
       <ambientLight intensity={0.5} color={0x444444 as any} />
@@ -22,22 +28,46 @@ export default function ReactThreeFiberCanvas() {
       <Room
         dimensions={[2, 0.1, 2]}
         position={[-2.25, 0, -2.25]}
-        color="purple"
+        color="red"
+        setCardText={setCardText}
+        cardTextColor="red"
       />
-      <Room dimensions={[2, 0.1, 2]} position={[-2.25, 0, 0]} color="maroon" />
-      <Room dimensions={[2, 0.1, 2]} position={[-2.25, 0, 2.25]} color="blue" />
+      <Room
+        dimensions={[2, 0.1, 2]}
+        position={[-2.25, 0, 0]}
+        color="purple"
+        setCardText={setCardText}
+        cardTextColor="purple"
+      />
+      <Room
+        dimensions={[2, 0.1, 2]}
+        position={[-2.25, 0, 2.25]}
+        color="blue"
+        setCardText={setCardText}
+        cardTextColor="blue"
+      />
       <Room
         dimensions={[2, 0.1, 2]}
         position={[2.25, 0, -2.25]}
-        color="maroon"
+        color="orange"
+        setCardText={setCardText}
+        cardTextColor="orange"
       />
-      <Room dimensions={[2, 0.1, 2]} position={[2.25, 0, 0]} color="purple" />
+      <Room
+        dimensions={[2, 0.1, 2]}
+        position={[2.25, 0, 0]}
+        color="yellow"
+        setCardText={setCardText}
+        cardTextColor="yellow"
+      />
       <Room
         dimensions={[2, 0.1, 2]}
         position={[2.25, 0, 2.25]}
-        color="lightgreen"
+        color="green"
+        setCardText={setCardText}
+        cardTextColor="green"
       />
-      <Box />
+      <Box setCardText={setCardText} />
       <axesHelper args={[1000]} />
       <Controls />
     </Canvas>

@@ -15,15 +15,15 @@ extend({ OrbitControls });
 
 const Controls = () => {
   const { gl, camera } = useThree();
-  const ref = useRef<any>();
+  const orbitControlsRef = useRef<any>();
 
   useFrame(() => {
-    ref.current && ref.current.update();
+    orbitControlsRef.current && orbitControlsRef.current.update();
   });
 
   return (
     <orbitControls
-      ref={ref}
+      ref={orbitControlsRef}
       args={[camera, gl.domElement]}
       autoRotate
       enableRotate={true}

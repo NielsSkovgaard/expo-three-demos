@@ -1,19 +1,43 @@
-﻿import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+﻿import React, { useRef, useState } from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import ReactThreeFiberCanvas from '../components/ReactThreeFiberCanvas';
 
 import '../utils/System';
 
+interface CardText {
+  text: string;
+  color: string;
+}
+
 export default function ReactThreeFiberScreen() {
+  const [cardTexts, setCardTexts] = useState<CardText[]>([]);
+  const scrollViewRef = useRef<any>();
+
+  const applyCardText = (text: string, color?: string): void => {
+    setCardTexts([...cardTexts, { text, color: color ?? '#000' }]);
+    if (scrollViewRef.current) {
+      scrollViewRef.current.scrollToEnd();
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <ReactThreeFiberCanvas />
+      <ReactThreeFiberCanvas setCardText={applyCardText} />
       <View style={styles.cardContainer}>
-        <View style={styles.card}>
-          <Text>
-            Show information about the active element in the 3D scene here.
+        <ScrollView
+          ref={scrollViewRef}
+          style={styles.card}
+          contentContainerStyle={styles.cardContentContainer}
+        >
+          <Text style={{ display: cardTexts.length === 0 ? 'flex' : 'none' }}>
+            Click on an element for more info.
           </Text>
-        </View>
+          {cardTexts.map((cardText, index) => (
+            <Text key={index} style={{ color: cardText.color }}>
+              {cardText.text}
+            </Text>
+          ))}
+        </ScrollView>
       </View>
     </View>
   );
@@ -24,17 +48,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   cardContainer: {
-    height: '25%',
+    height: '40%',
     padding: 8,
     backgroundColor: '#485b9a',
   },
   card: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: '10%',
-    backgroundColor: '#fff',
+    backgroundColor: 'lightgray',
     borderWidth: 1,
     borderColor: '#ccc',
+  },
+  cardContentContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
