@@ -20,6 +20,26 @@ export default function ReactThreeFiberScreen() {
     }
   };
 
+  const groupCardTextsByColor = (
+    previousValue: CardText[],
+    currentValue: CardText,
+    currentIndex: number,
+    array: CardText[]
+  ): CardText[] => {
+    if (
+      previousValue.length > 0 &&
+      previousValue[previousValue.length - 1].color === currentValue.color
+    ) {
+      previousValue[previousValue.length - 1].text += ` - ${currentValue.text}`;
+    } else {
+      previousValue.push({
+        text: currentValue.text,
+        color: currentValue.color,
+      });
+    }
+    return previousValue;
+  };
+
   return (
     <View style={styles.container}>
       <ReactThreeFiberCanvas setCardText={applyCardText} />
@@ -32,11 +52,13 @@ export default function ReactThreeFiberScreen() {
           <Text style={{ display: cardTexts.length === 0 ? 'flex' : 'none' }}>
             Click on an element for more info.
           </Text>
-          {cardTexts.map((cardText, index) => (
-            <Text key={index} style={{ color: cardText.color }}>
-              {cardText.text}
-            </Text>
-          ))}
+          {cardTexts
+            .reduce(groupCardTextsByColor, [] as CardText[])
+            .map((cardText, index) => (
+              <Text key={index} style={{ color: cardText.color }}>
+                {cardText.text}
+              </Text>
+            ))}
         </ScrollView>
       </View>
     </View>
@@ -60,7 +82,7 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
   },
   cardContentContainer: {
-    alignItems: 'center',
+    alignItems: 'baseline',
     justifyContent: 'center',
   },
 });
