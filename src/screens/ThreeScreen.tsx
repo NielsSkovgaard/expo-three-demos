@@ -1,10 +1,11 @@
 ﻿import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import ThreeScreenView from '../components/ThreeScreen/ThreeScreenView';
 
 export default function ThreeScreen() {
   return (
     <View style={styles.container}>
-      <Text>Three Screen</Text>
+      <ThreeScreenView />
     </View>
   );
 }
@@ -12,7 +13,5 @@ export default function ThreeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

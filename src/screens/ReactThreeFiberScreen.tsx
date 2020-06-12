@@ -1,6 +1,6 @@
 ﻿import React, { useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import ReactThreeFiberCanvas from '../components/ReactThreeFiberCanvas';
+import ReactThreeFiberCanvas from '../components/ReactThreeFiberScreen/ReactThreeFiberCanvas';
 
 import '../utils/System';
 

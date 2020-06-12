@@ -1,6 +1,6 @@
 ﻿import React, { useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { OrbitControls } from '../../lib/drei/OrbitControls';
+import { OrbitControls } from '../../../lib/drei/OrbitControls';
 
 // https://github.com/drcmda/learnwithjason/blob/master/src/App.js
 
@@ -10,6 +10,7 @@ import { OrbitControls } from '../../lib/drei/OrbitControls';
 // Example demo: https://snack.expo.io/@agrcrobles/panresponderexample
 // Example demo: https://codesandbox.io/s/keen-ride-j1fut?file=/src/App.js
 // Gesture Responder System: https://facebook.github.io/react-native/docs/gesture-responder-system
+// Sergey Gavrilyuk - https://twitter.com/Baconbrix/status/1255167450770882560
 
 const Controls = () => {
   const orbitControlsRef = useRef<any>();
