@@ -1,6 +1,6 @@
 ﻿import React, { useRef } from 'react';
-import { extend, useFrame, useThree } from 'react-three-fiber';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { useFrame } from 'react-three-fiber';
+import { OrbitControls } from '../../lib/drei/OrbitControls';
 
 // https://github.com/drcmda/learnwithjason/blob/master/src/App.js
 
@@ -11,10 +11,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // Example demo: https://codesandbox.io/s/keen-ride-j1fut?file=/src/App.js
 // Gesture Responder System: https://facebook.github.io/react-native/docs/gesture-responder-system
 
-extend({ OrbitControls });
-
 const Controls = () => {
-  const { gl, camera } = useThree();
   const orbitControlsRef = useRef<any>();
 
   useFrame(() => {
@@ -22,9 +19,8 @@ const Controls = () => {
   });
 
   return (
-    <orbitControls
+    <OrbitControls
       ref={orbitControlsRef}
-      args={[camera, gl.domElement]}
       autoRotate
       enableRotate={true}
       enablePan={true}
