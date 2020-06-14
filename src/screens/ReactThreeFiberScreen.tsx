@@ -68,18 +68,17 @@ export default function ReactThreeFiberScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#485b9a',
   },
   cardContainer: {
     height: '40%',
-    padding: 8,
-    backgroundColor: '#485b9a',
+    margin: 8,
+    borderWidth: 1,
+    borderColor: '#333333',
+    backgroundColor: 'lightgray',
   },
   card: {
-    flex: 1,
-    paddingHorizontal: '10%',
-    backgroundColor: 'lightgray',
-    borderWidth: 1,
-    borderColor: '#ccc',
+    margin: 16,
   },
   cardContentContainer: {
     alignItems: 'baseline',
