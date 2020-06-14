@@ -42,15 +42,13 @@ export default function ReactThreeFiberScreen() {
 
   return (
     <View style={styles.container}>
-      <ReactThreeFiberCanvas setCardText={applyCardText} />
+      <View style={styles.canvasContainer}>
+        <ReactThreeFiberCanvas setCardText={applyCardText} />
+      </View>
       <View style={styles.cardContainer}>
-        <ScrollView
-          ref={scrollViewRef}
-          style={styles.card}
-          contentContainerStyle={styles.cardContentContainer}
-        >
+        <ScrollView ref={scrollViewRef} style={styles.card}>
           <Text style={{ display: cardTexts.length === 0 ? 'flex' : 'none' }}>
-            Click on an element for more info.
+            Touch or click on an element to see its events.
           </Text>
           {cardTexts
             .reduce(groupCardTextsByColor, [] as CardText[])
@@ -70,18 +68,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#485b9a',
   },
+  canvasContainer: {
+    flex: 6,
+  },
   cardContainer: {
-    height: '40%',
-    margin: 8,
+    flex: 4,
+    margin: '2%',
     borderWidth: 1,
     borderColor: '#333333',
     backgroundColor: 'lightgray',
   },
   card: {
-    margin: 16,
-  },
-  cardContentContainer: {
-    alignItems: 'baseline',
-    justifyContent: 'center',
+    flex: 1,
+    margin: '5%',
   },
 });

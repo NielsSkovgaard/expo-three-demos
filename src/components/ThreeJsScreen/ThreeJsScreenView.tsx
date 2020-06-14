@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { Renderer } from 'expo-three';
 import OrbitControlsView from 'expo-three-orbit-controls';
 
-export default function ThreeScreenView() {
+export default function ThreeJsScreenView() {
   const [camera, setCamera] = useState<THREE.Camera | null>(null);
 
   let timeout: number;

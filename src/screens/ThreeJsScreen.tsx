@@ -1,11 +1,11 @@
 ﻿import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import ThreeScreenView from '../components/ThreeScreen/ThreeScreenView';
+import ThreeJsScreenView from '../components/ThreeJsScreen/ThreeJsScreenView';
 
-export default function ThreeScreen() {
+export default function ThreeJsScreen() {
   return (
     <View style={styles.container}>
-      <ThreeScreenView />
+      <ThreeJsScreenView />
     </View>
   );
 }

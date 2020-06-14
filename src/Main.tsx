@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import ReactThreeFiberScreen from './screens/ReactThreeFiberScreen';
-import ThreeScreen from './screens/ThreeScreen';
+import ThreeJsScreen from './screens/ThreeJsScreen';
 
 const Stack = createStackNavigator();
 
@@ -17,9 +17,9 @@ export default function Main() {
           options={{ title: 'Demos for Expo and Three.js' }}
         />
         <Stack.Screen
-          name="Three"
-          component={ThreeScreen}
-          options={{ title: 'Three' }}
+          name="Three.js"
+          component={ThreeJsScreen}
+          options={{ title: 'Three.js' }}
         />
         <Stack.Screen
           name="ReactThreeFiber"
