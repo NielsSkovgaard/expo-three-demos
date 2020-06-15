@@ -16,9 +16,9 @@ interface FlatListDataItem {
 
 const FlatListDataItems: FlatListDataItem[] = [
   {
-    id: 'Three',
-    title: 'Three',
-    screenName: 'Three',
+    id: 'ThreeJs',
+    title: 'Three.js',
+    screenName: 'ThreeJs',
   },
   {
     id: 'ReactThreeFiber',

@@ -17,7 +17,7 @@ export default function Main() {
           options={{ title: 'Demos for Expo and Three.js' }}
         />
         <Stack.Screen
-          name="Three.js"
+          name="ThreeJs"
           component={ThreeJsScreen}
           options={{ title: 'Three.js' }}
         />

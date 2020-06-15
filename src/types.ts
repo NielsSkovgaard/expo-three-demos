@@ -1,5 +1,5 @@
 type RootStackParamList = {
   Home: undefined;
-  Three: undefined;
+  ThreeJs: undefined;
   ReactThreeFiber: undefined;
 };
