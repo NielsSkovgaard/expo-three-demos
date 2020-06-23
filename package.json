@@ -1,5 +1,17 @@
 {
+  "name": "expo-three-demos",
+  "version": "1.0.0",
+  "description": "Demos for Expo and Three.js",
+  "homepage": "https://github.com/NielsSkovgaard/expo-three-demos",
+  "license": "MIT",
+  "author": {
+    "name": "Niels Skovgaard"
+  },
   "main": "node_modules/expo/AppEntry.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:NielsSkovgaard/expo-three-demos.git"
+  },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -24,15 +36,15 @@
     "react-native-reanimated": "~1.7.1",
     "react-native-safe-area-context": "0.7.3",
     "react-native-screens": "~2.2.0",
-    "react-native-web": "^0.11.7",
-    "react-three-fiber": "^4.2.10",
+    "react-native-web": "^0.12.3",
+    "react-three-fiber": "^5.0.0-beta.10",
     "three": "^0.117.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@types/react": "^16.9.36",
+    "@babel/core": "^7.10.3",
+    "@types/react": "^16.9.38",
     "@types/react-native": "^0.62.13",
-    "babel-preset-expo": "^8.2.1",
+    "babel-preset-expo": "^8.2.3",
     "prettier": "2.0.5",
     "typescript": "^3.9.5"
   },

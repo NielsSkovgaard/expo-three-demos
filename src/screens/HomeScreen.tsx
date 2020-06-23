@@ -1,49 +1,8 @@
 ﻿import React from 'react';
-import {
-  FlatList,
-  GestureResponderEvent,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-} from 'react-native';
+import { FlatList } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-
-interface FlatListDataItem {
-  id: string;
-  title: string;
-  screenName: keyof RootStackParamList;
-}
-
-const FlatListDataItems: FlatListDataItem[] = [
-  {
-    id: 'ThreeJs',
-    title: 'Three.js',
-    screenName: 'ThreeJs',
-  },
-  {
-    id: 'ReactThreeFiber',
-    title: 'React Three Fiber',
-    screenName: 'ReactThreeFiber',
-  },
-];
-
-interface FlatListItemProps {
-  title: string;
-  onPress: (event: GestureResponderEvent) => void;
-}
-
-function FlatListItem({ title, onPress }: FlatListItemProps) {
-  return (
-    <TouchableHighlight
-      style={styles.flatListItem}
-      activeOpacity={0.6}
-      underlayColor="#ddd"
-      onPress={onPress}
-    >
-      <Text>{title}</Text>
-    </TouchableHighlight>
-  );
-}
+import { FlatListDataItems } from '../components/HomeScreen/FlatListDataItems';
+import FlatListItem from '../components/HomeScreen/FlatListItem';
 
 export default function HomeScreen({
   navigation,
@@ -61,11 +20,3 @@ export default function HomeScreen({
     />
   );
 }
-
-const styles = StyleSheet.create({
-  flatListItem: {
-    marginTop: 5,
-    padding: 20,
-    backgroundColor: '#fff',
-  },
-});

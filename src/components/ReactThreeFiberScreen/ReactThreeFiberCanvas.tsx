@@ -51,7 +51,7 @@ export default function ReactThreeFiberCanvas({
         cardTextColor="green"
       />
       <gridHelper args={[10, 10]} />
-      <axesHelper args={[1000]} />
+      <axesHelper args={[1000]} position={[0, 0.0001, 0]} />
       <Controls />
     </Canvas>
   );

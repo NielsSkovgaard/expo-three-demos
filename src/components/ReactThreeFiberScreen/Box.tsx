@@ -1,7 +1,7 @@
 ﻿import React, { useCallback, useState } from 'react';
 import { ReactThreeFiber } from 'react-three-fiber';
 
-export interface BoxProps {
+interface BoxProps {
   dimensions?: any;
   position?: ReactThreeFiber.Vector3;
   color?: ReactThreeFiber.Color;
@@ -13,13 +13,13 @@ interface BoxState {
   color?: ReactThreeFiber.Color;
 }
 
-const Box = ({
+export default function Box({
   dimensions,
   position,
   color,
   setCardText,
   cardTextColor,
-}: BoxProps) => {
+}: BoxProps) {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const onActivation = useCallback(
@@ -70,6 +70,4 @@ const Box = ({
       />
     </mesh>
   );
-};
-
-export default Box;
+}

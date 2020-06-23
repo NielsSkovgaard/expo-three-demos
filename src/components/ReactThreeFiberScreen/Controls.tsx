@@ -8,7 +8,7 @@ import { OrbitControls } from '../../../lib/drei/OrbitControls';
  * the whole package (since the package has other components that only work on
  * web and would result in an error on startup when running as a mobile app).
  */
-const Controls = () => {
+export default function Controls() {
   const orbitControlsRef = useRef<any>();
 
   useFrame(() => {
@@ -30,6 +30,4 @@ const Controls = () => {
       maxPolarAngle={Math.PI / 2.25}
     />
   );
-};
-
-export default Controls;
+}
