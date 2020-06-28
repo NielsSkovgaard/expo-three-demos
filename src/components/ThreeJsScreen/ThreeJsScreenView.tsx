@@ -51,10 +51,10 @@ export default function ThreeJsScreenView() {
 
     camera.lookAt(cube.position);
 
-    function update() {
+    const update = () => {
       cube.rotation.y += 0.05;
       cube.rotation.x += 0.025;
-    }
+    };
 
     // Setup an animation loop
     const render = () => {

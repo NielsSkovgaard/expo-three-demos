@@ -1,8 +1,9 @@
 ﻿import React, { useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import ReactThreeFiberCanvas from '../components/ReactThreeFiberScreen/ReactThreeFiberCanvas';
+import SystemUtils from '../utils/SystemUtils';
 
-import '../utils/System';
+SystemUtils.configurePerformance();
 
 interface CardText {
   text: string;

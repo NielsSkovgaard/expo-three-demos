@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import ReactThreeFiberScreen from './screens/ReactThreeFiberScreen';
 import ThreeJsScreen from './screens/ThreeJsScreen';
+import ThreeJsWithoutOrbitControlsScreen from './screens/ThreeJsWithoutOrbitControlsScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,11 @@ export default function Main() {
           name="ThreeJs"
           component={ThreeJsScreen}
           options={{ title: 'Three.js' }}
+        />
+        <Stack.Screen
+          name="ThreeJsWithoutOrbitControls"
+          component={ThreeJsWithoutOrbitControlsScreen}
+          options={{ title: 'Three.js (without OrbitControls)' }}
         />
         <Stack.Screen
           name="ReactThreeFiber"

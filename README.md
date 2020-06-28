@@ -13,11 +13,12 @@ Technology stack: [Expo](https://expo.io/), [Three.js](https://threejs.org/), [O
 These links serve as inspiration for the demos:
 - [Twitter - App by Shopify that uses React-Three-Fiber and OrbitControls](https://twitter.com/jmwind/status/1255101384338391040)
 - [Code example - using React Native with "standard" Three.js and OrbitControls](https://github.com/expo/expo/issues/7502#issuecomment-606389791) (click the arrow to see the code)
+- [Code example - using React Native with "standard" Three.js (mouse and touch gestures without OrbitControls)](https://github.com/cryslub/history-expo)
 
 ## OrbitControls - Mouse and Touch Gestures
 
 OrbitControls defines the mouse and touch gestures that will result in the following actions:
- 
+
 - **Orbit:** left mouse / touch: one-finger move
 - **Zoom:** middle mouse, or mouse-wheel / touch: two-finger spread or squish
 - **Pan:** right mouse, or left mouse + ctrl/meta/shiftKey, or arrow keys / touch: two-finger move
@@ -37,6 +38,12 @@ The app has two demos, each using different technologies to set up the 3D scene.
     - **Web + Touch:** Orbit (works, but bad performance): ⚠️. Zoom: ❌. Pan: ❌.
     - **Mobile + Mouse:** Orbit: ✔️. Zoom: ❌. Pan: ❌.
     - **Mobile + Touch:** Orbit: ✔️. Zoom: ❌. Pan: ❌.
+
+### Three.js demo (without OrbitControls)
+
+- This demo supports mouse and touch input without OrbitControls.
+- It's based on [GitHub: history-expo](https://github.com/cryslub/history-expo), which seems to be based on [GitHub: expo-three-template](https://github.com/EvanBacon/expo-three-template/blob/master/window/Touches.js).
+- Work in progress.
 
 ### React-Three-Fiber demo
 
