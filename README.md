@@ -27,7 +27,7 @@ Therefore, these are the expected outcomes in the demos in the app. For each dem
 
 ## Demos in the App (with Test Results)
 
-The app has two demos, each using different technologies to set up the 3D scene. Screenshots below.
+The app has several demos, each using different technologies to set up the 3D scene. Screenshots below.
 
 ### Three.js demo
 
@@ -39,7 +39,7 @@ The app has two demos, each using different technologies to set up the 3D scene.
     - **Mobile + Mouse:** Orbit: ✔️. Zoom: ❌. Pan: ❌.
     - **Mobile + Touch:** Orbit: ✔️. Zoom: ❌. Pan: ❌.
 
-### Three.js demo (without OrbitControls)
+### Three.js demo (without OrbitControls) (new)
 
 - This demo supports mouse and touch input without OrbitControls.
 - It's based on [GitHub: history-expo](https://github.com/cryslub/history-expo), which seems to be based on [GitHub: expo-three-template](https://github.com/EvanBacon/expo-three-template/blob/master/window/Touches.js).
