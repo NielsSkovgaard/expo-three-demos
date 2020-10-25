@@ -47,8 +47,8 @@ The app has several demos, each using different technologies to set up the 3D sc
 
 ### React-Three-Fiber demo
 
-- This demo uses [React-Three-Fiber](https://github.com/react-spring/react-three-fiber) "on top" of Three.js.
-- It uses the OrbitControls helper from the [drei](https://github.com/react-spring/drei) package (only that file is copied into this repository, because adding the whole package as dependency will make the app crash on non-web platforms).
+- This demo uses [React-Three-Fiber](https://github.com/pmndrs/react-three-fiber) "on top" of Three.js.
+- It uses the OrbitControls helper from the [drei](https://github.com/pmndrs/drei) package (only that file is copied into this repository, because adding the whole package as dependency will make the app crash on non-web platforms).
 - Test results:
     - **Web + Mouse:** Orbit: ✔️. Zoom: ✔️. Pan: ✔️.
     - **Web + Touch:** Orbit: ✔️. Zoom: ✔️. Pan: ✔️.
@@ -58,5 +58,5 @@ The app has several demos, each using different technologies to set up the 3D sc
 
 ### Screenshots
 
-![Screenshots on mobile](/screenshots-mobile.png?raw=true "Screenshots on mobile")
-![Screenshots on web](/screenshots-web.png?raw=true "Screenshots on web")
+![Screenshots on mobile](./screenshots-mobile.png?raw=true "Screenshots on mobile")
+![Screenshots on web](./screenshots-web.png?raw=true "Screenshots on web")
