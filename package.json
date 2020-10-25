@@ -18,7 +18,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx}\""
+    "format": "prettier --write \"{App.tsx,src/**/*.{js,ts,jsx,tsx}}\""
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.6",
