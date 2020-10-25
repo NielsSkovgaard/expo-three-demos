@@ -11,8 +11,7 @@ interface FlatListItemProps {
   onPress: (event: GestureResponderEvent) => void;
 }
 
-export default function FlatListItem(props: FlatListItemProps) {
-  let { title, onPress } = props;
+export default function FlatListItem({ onPress, title }: FlatListItemProps) {
   return (
     <TouchableHighlight
       style={styles.flatListItem}
