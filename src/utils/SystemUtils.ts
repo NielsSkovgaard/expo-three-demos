@@ -1,9 +1,9 @@
 ﻿const SystemUtils = {
-  configurePerformance: function () {
+  configurePerformance() {
     window.performance.clearMarks = () => {};
-    window.performance.measure = () => {};
     window.performance.clearMeasures = () => {};
     window.performance.mark = () => {};
+    window.performance.measure = () => {};
     window.performance.now = Date.now;
   },
 };
