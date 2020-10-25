@@ -1,10 +1,6 @@
-import React, { forwardRef, useRef, useEffect } from 'react'
-import { ReactThreeFiber, extend, useThree, useFrame, Overwrite } from 'react-three-fiber'
+import React, { forwardRef, useEffect, useMemo } from 'react'
+import { ReactThreeFiber, useThree, useFrame, Overwrite } from 'react-three-fiber'
 import { OrbitControls as OrbitControlsImpl } from 'three/examples/jsm/controls/OrbitControls'
-// @ts-ignore
-import mergeRefs from 'react-merge-refs'
-
-extend({ OrbitControlsImpl })
 
 export type OrbitControls = Overwrite<
   ReactThreeFiber.Object3DNode<OrbitControlsImpl, typeof OrbitControlsImpl>,
@@ -13,7 +9,6 @@ export type OrbitControls = Overwrite<
 
 declare global {
   namespace JSX {
-    // eslint-disable-next-line @typescript-eslint/interface-name-prefix
     interface IntrinsicElements {
       orbitControlsImpl: OrbitControls
     }
@@ -21,12 +16,17 @@ declare global {
 }
 
 export const OrbitControls = forwardRef((props: OrbitControls = { enableDamping: true }, ref) => {
-  const controls = useRef<OrbitControlsImpl>()
   const { camera, gl, invalidate } = useThree()
-  useFrame(() => controls.current?.update())
+  const controls = useMemo(() => new OrbitControlsImpl(camera, gl.domElement), [camera, gl])
+
+  useFrame(() => {
+    controls.update()
+  })
+
   useEffect(() => {
-    controls.current?.addEventListener('change', invalidate)
-    return () => controls.current?.removeEventListener('change', invalidate)
-  }, [controls.current])
-  return <orbitControlsImpl ref={mergeRefs([controls, ref])} args={[camera, gl.domElement]} enableDamping {...props} />
+    controls?.addEventListener?.('change', invalidate)
+    return () => controls?.removeEventListener?.('change', invalidate)
+  }, [controls, invalidate])
+
+  return <primitive dispose={null} object={controls} ref={ref} enableDamping {...props} />
 })
