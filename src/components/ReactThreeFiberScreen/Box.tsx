@@ -61,9 +61,8 @@ export default function Box({
       // onPointerLeave={e => setCardText?.('leave', elementName)}
       // onUpdate={self => setCardText?.('props have been updated')}
     >
-      <boxGeometry attach="geometry" args={dimensions} />
+      <boxGeometry args={dimensions} />
       <meshStandardMaterial
-        attach="material"
         color={state.color}
         roughness={0.4}
         metalness={0.1}
