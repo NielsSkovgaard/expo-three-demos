@@ -39,7 +39,7 @@
     "react-native-screens": "~2.2.0",
     "react-native-web": "~0.13.18",
     "react-three-fiber": "^5.1.4",
-    "three": "^0.121.1"
+    "three": "^0.125.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
